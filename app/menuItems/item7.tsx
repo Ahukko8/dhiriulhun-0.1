@@ -11,7 +11,7 @@ const Item7 = () => {
   const [modalVisible, setModalVisible] = useState(false);
   const { progress, updateProgress } = useProgressStore();
   const handleSubmit = (checkedItems: Record<string, boolean>) => {
-    updateProgress("ހަވީރުގެ ޛިކުރު", checkedItems);
+    updateProgress("ހަވީރުގެ ޛިކުރު", checkedItems, dhikrChecklistItems.length);
   };
 
   return (
@@ -33,7 +33,7 @@ const Item7 = () => {
         items={dhikrChecklistItems}
         title="ހަވީރުގެ ޛިކުރު ޗެކްލިސްޓް"
         onSubmit={handleSubmit}
-        initialCheckedItems={progress["item7"]}
+        initialCheckedItems={progress["ހަވީރުގެ ޛިކުރު"]?.checkedItems || {}}
       />
     </SafeAreaView>
   );

@@ -31,7 +31,7 @@ const Item4: React.FC = () => {
   }, [navigation, unloadAllAudios]);
 
   const handleSubmit = (checkedItems: Record<string, boolean>) => {
-    updateProgress("ޟުޙާ ނަމާދު", checkedItems);
+    updateProgress("ޟުޙާ ނަމާދު", checkedItems, dhuhaChecklistItems.length);
   };
 
   return (
@@ -58,7 +58,7 @@ const Item4: React.FC = () => {
         items={dhuhaChecklistItems}
         title="ޟުޙާ ނަމާދު ޗެކްލިސްޓް"
         onSubmit={handleSubmit}
-        initialCheckedItems={progress["item4"]}
+        initialCheckedItems={progress["ޟުޙާ ނަމާދު"]?.checkedItems || {}}
       />
     </SafeAreaView>
   );

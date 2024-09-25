@@ -42,9 +42,7 @@ export const maqribChecklistItems = [
   { id: "3", text: "Item 3 for Dhuha Prayer" },
 ];
 export const quranChecklistItems = [
-  { id: "1", text: "ޞުޙާ ނަމާދުކުރުމަށް ވުޞޫ ފުރިހަމަކޮށްފި" },
-  { id: "2", text: "Item 2 for Dhuha Prayer" },
-  { id: "3", text: "Item 3 for Dhuha Prayer" },
+  { id: "1", text: "   މިއަދުގެ ސޫރަތްތައް ކިޔައި ނިންމައިފި" },
 ];
 export const ishaChecklistItems = [
   { id: "1", text: "ޞުޙާ ނަމާދުކުރުމަށް ވުޞޫ ފުރިހަމަކޮށްފި" },

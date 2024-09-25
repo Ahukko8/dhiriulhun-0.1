@@ -41,6 +41,15 @@ const ProgressItem: React.FC<ProgressItemProps> = ({
   );
 };
 
+const TotalProgressBar: React.FC<{ progress: number }> = ({ progress }) => (
+  <View className="bg-gray-200 h-4 rounded-full overflow-hidden">
+    <View
+      className="bg-blue-500 h-full"
+      style={{ width: `${progress * 100}%` }}
+    />
+  </View>
+);
+
 const Progress: React.FC = () => {
   const { progress, resetProgress, cleanupExpiredProgress } =
     useProgressStore();
@@ -96,24 +105,41 @@ const Progress: React.FC = () => {
     }
   }, [isCapturing]);
 
-  const handleReset = () => {
-    resetProgress();
-    // Force a re-render
-    setCurrentDateTime(new Date());
-  };
+  // Calculate total progress
+  const totalCompleted = Object.values(progress).reduce(
+    (sum, { checkedItems }) =>
+      sum + Object.values(checkedItems).filter(Boolean).length,
+    // eslint-disable-next-line prettier/prettier
+    0
+  );
+  const totalItems = Object.values(progress).reduce(
+    (sum, { totalItems }) => sum + totalItems,
+    // eslint-disable-next-line prettier/prettier
+    0
+  );
+  const totalProgress = totalItems > 0 ? totalCompleted / totalItems : 0;
 
   return (
     <SafeAreaView className="flex-1 bg-white">
       <View className="flex-1">
-        <View className="p-4 bg-gray-100">
+        <View className="p-4 bg-white">
           <Text className="font-dhivehiContent text-center text-lg">
             {currentDateTime.toLocaleDateString()}{" "}
             {currentDateTime.toLocaleTimeString()}
           </Text>
         </View>
+        {/* <View className="px-4 py-2">
+          <Text className="font-dhivehiContent text-lg mb-2">
+            ޖުމްލަ ޕްރޮގްރެސް: %{Math.round(totalProgress * 100)}
+          </Text>
+          <Text className="font-dhivehiContent text-md mb-2">
+            ފުރިހަމަކުރި: {totalItems} / {totalCompleted}
+          </Text>
+          <TotalProgressBar progress={totalProgress} />
+        </View> */}
         <View className="flex-row justify-around m-4">
           <Pressable
-            onPress={handleReset}
+            onPress={resetProgress}
             className="bg-blue-500 active:bg-blue-400 p-4 rounded flex-row items-center"
           >
             <Ionicons name="refresh" size={24} color="white" />
@@ -132,29 +158,32 @@ const Progress: React.FC = () => {
           ref={viewShotRef}
           options={{ format: "png", quality: 0.9 }}
         >
-          {Object.keys(progress).length === 0 ? (
-            <View className="flex-1 justify-center items-center">
-              <Text className="font-dhivehiContent text-gray-500">
-                މަޢުލޫމާތެއް ނެތް
-              </Text>
-            </View>
-          ) : (
-            <FlatList
-              data={Object.entries(progress)}
-              renderItem={({
-                item: [itemId, { checkedItems, totalItems, timestamp }],
-              }) => (
+          <View className="px-4 py-2">
+            <Text className="font-dhivehiContent text-lg mb-2">
+              ޖުމްލަ ޕްރޮގްރެސް: %{Math.round(totalProgress * 100)}
+            </Text>
+            <Text className="font-dhivehiContent text-md mb-2">
+              ފުރިހަމަކުރި: {totalItems} / {totalCompleted}
+            </Text>
+            <TotalProgressBar progress={totalProgress} />
+          </View>
+          <FlatList
+            data={Object.entries(progress)}
+            renderItem={({
+              item: [itemId, { checkedItems, totalItems, timestamp }],
+            }) => (
+              <>
                 <ProgressItem
                   itemId={itemId}
                   checkedItems={checkedItems}
                   totalItems={totalItems}
                   timestamp={timestamp}
                 />
-              )}
-              keyExtractor={([itemId]) => itemId}
-              contentContainerStyle={{ flexGrow: 1 }}
-            />
-          )}
+              </>
+            )}
+            keyExtractor={([itemId]) => itemId}
+            contentContainerStyle={{ flexGrow: 1 }}
+          />
         </ViewShot>
       </View>
     </SafeAreaView>
