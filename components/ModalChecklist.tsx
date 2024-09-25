@@ -37,6 +37,7 @@ const ModalChecklist: React.FC<ModalChecklistProps> = ({
   };
 
   const handleSubmit = () => {
+    console.log("ModalChecklist - Submitting:", { checkedItems });
     onSubmit(checkedItems);
     onClose();
   };

@@ -14,7 +14,7 @@ const Item2 = () => {
   const [modalVisible, setModalVisible] = useState(false);
   const { progress, updateProgress } = useProgressStore();
   const handleSubmit = (checkedItems: Record<string, boolean>) => {
-    updateProgress("ފަތިސް ނަމާދު", checkedItems);
+    updateProgress("ފަތިސް ނަމާދު", checkedItems, fajrChecklistItems.length);
   };
   const {
     isPlaying,
@@ -60,7 +60,7 @@ const Item2 = () => {
         items={fajrChecklistItems}
         title="ފަތިސް ނަމާދު ޗެކްލިސްޓް"
         onSubmit={handleSubmit}
-        initialCheckedItems={progress["item2"]}
+        initialCheckedItems={progress["ފަތިސް ނަމާދު"]?.checkedItems || {}}
       />
     </SafeAreaView>
   );

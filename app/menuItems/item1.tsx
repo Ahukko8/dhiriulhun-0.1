@@ -10,9 +10,15 @@ import { AblutionDetails } from "@/components/ablutionDetails";
 const Item1 = () => {
   const [modalVisible, setModalVisible] = useState(false);
   const { progress, updateProgress } = useProgressStore();
+
   const handleSubmit = (checkedItems: Record<string, boolean>) => {
-    updateProgress("ވުޟޫކުރުން ", checkedItems);
+    console.log("Item1 - Submitting:", {
+      checkedItems,
+      totalItems: ablutionChecklistItems.length,
+    });
+    updateProgress("ވުޟޫކުރުން", checkedItems, ablutionChecklistItems.length);
   };
+
   return (
     <SafeAreaView className="flex-1">
       <AblutionDetails
@@ -32,7 +38,7 @@ const Item1 = () => {
         items={ablutionChecklistItems}
         title="ވުޟޫކުރުން ޗެކްލިސްޓް"
         onSubmit={handleSubmit}
-        initialCheckedItems={progress["item1"]}
+        initialCheckedItems={progress["ވުޟޫކުރުން"]?.checkedItems || {}}
       />
     </SafeAreaView>
   );

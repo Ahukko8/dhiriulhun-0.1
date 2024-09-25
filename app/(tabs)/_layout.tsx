@@ -4,13 +4,13 @@ import {
   MaterialTopTabNavigationOptions,
 } from "@react-navigation/material-top-tabs";
 import { ParamListBase, TabNavigationState } from "@react-navigation/native";
-// import { ImageBackground, Text, View } from "react-native";
 import React, { useEffect } from "react";
 import { SplashScreen } from "expo-router";
 import { useFonts } from "expo-font";
 import { withLayoutContext } from "expo-router";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { AntDesign } from "@expo/vector-icons";
+import { Ionicons } from "@expo/vector-icons"; // Add this import for the reminder icon
 
 const { Navigator } = createMaterialTopTabNavigator();
 
@@ -43,6 +43,7 @@ const Layout = () => {
           backgroundColor: "#1CB7ED",
           height: 3,
         },
+        tabBarStyle: { height: 50 },
       }}
     >
       <MaterialTopTabs.Screen
@@ -56,7 +57,15 @@ const Layout = () => {
               color={color}
             />
           ),
-          tabBarStyle: { height: 50 },
+        }}
+      />
+      <MaterialTopTabs.Screen
+        name="notifications"
+        options={{
+          title: "",
+          tabBarIcon: ({ color }) => (
+            <Ionicons name="notifications-outline" size={24} color={color} />
+          ),
         }}
       />
       <MaterialTopTabs.Screen
@@ -70,7 +79,6 @@ const Layout = () => {
               color={color}
             />
           ),
-          tabBarStyle: { height: 50 },
         }}
       />
       <MaterialTopTabs.Screen
@@ -80,7 +88,6 @@ const Layout = () => {
           tabBarIcon: ({ color }) => (
             <AntDesign name="home" size={24} color={color} />
           ),
-          tabBarStyle: { height: 50 },
         }}
       />
     </MaterialTopTabs>
