@@ -141,7 +141,7 @@ const ModalChecklist: React.FC<ModalChecklistProps> = ({
     >
       <View className="flex-1 justify-center items-center bg-transparent">
         <View className="bg-white p-6 rounded-lg w-4/5 shadow-lg">
-          <Text className="text-lg font-bold text-center mb-4 font-dhivehi">
+          <Text className="text-lg  text-center mb-4 font-dhivehi">
             {title}
           </Text>
           <FlatList

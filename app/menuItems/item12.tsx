@@ -5,7 +5,7 @@ import useProgressStore from "@/state/progressStore";
 import { useMultiAudio } from "@/hooks/audio";
 import { useNavigation } from "expo-router";
 import ModalChecklist from "@/components/ModalChecklist";
-import { imageMap } from "@/constants/imageMap";
+import { witrImageMap } from "@/constants/imageMap";
 import { audioSources } from "@/constants/audioData/audioSource";
 import { witrChecklistItems } from "@/constants/checklistItems";
 import { witrFooterTexts } from "@/constants/footerTexts";
@@ -14,7 +14,7 @@ const Item12 = () => {
   const [modalVisible, setModalVisible] = useState(false);
   const { progress, updateProgress } = useProgressStore();
   const handleSubmit = (checkedItems: Record<string, boolean>) => {
-    updateProgress("ވިތުރި ނަމާދު", checkedItems);
+    updateProgress("ވިތުރި ނަމާދު", checkedItems, witrChecklistItems.length);
   };
   const {
     isPlaying,
@@ -39,7 +39,7 @@ const Item12 = () => {
     <SafeAreaView className="flex-1">
       <MenuDetails
         title="ވިތުރި ނަމާދު"
-        imageMap={imageMap}
+        imageMap={witrImageMap}
         footerTexts={witrFooterTexts}
         onPlayPauseSound={playPause}
         onIndexChange={playAudioForIndex}
@@ -59,7 +59,7 @@ const Item12 = () => {
         items={witrChecklistItems}
         title="ވިތުރި ނަމާދު ޗެކްލިސްޓް"
         onSubmit={handleSubmit}
-        initialCheckedItems={progress["item12"]}
+        initialCheckedItems={progress["ވިތުރި ނަމާދު"]?.checkedItems || {}}
       />
     </SafeAreaView>
   );
