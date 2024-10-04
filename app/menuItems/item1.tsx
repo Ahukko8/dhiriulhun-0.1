@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Pressable, SafeAreaView, Text } from "react-native";
+import { Pressable, SafeAreaView, Text, View } from "react-native";
 import useProgressStore from "@/state/progressStore";
 import ModalChecklist from "@/components/ModalChecklist";
 import { ablutionFooterTexts } from "@/constants/footerTexts";
@@ -21,25 +21,30 @@ const Item1 = () => {
 
   return (
     <SafeAreaView className="flex-1">
-      <AblutionDetails
-        title="ވުޟޫކުރުން"
-        imageMap={ablutionImageMap}
-        footerTexts={ablutionFooterTexts}
-      />
-      <Pressable
-        onPress={() => setModalVisible(true)}
-        className="bg-blue-500 p-4 m-10 rounded active:bg-blue-500/80"
-      >
-        <Text className="text-white font-dhivehi text-center">ޗެކްލިސްޓް</Text>
-      </Pressable>
-      <ModalChecklist
-        isVisible={modalVisible}
-        onClose={() => setModalVisible(false)}
-        items={ablutionChecklistItems}
-        title="ވުޟޫކުރުން ޗެކްލިސްޓް"
-        onSubmit={handleSubmit}
-        initialCheckedItems={progress["ވުޟޫކުރުން"]?.checkedItems || {}}
-      />
+      <View className="flex-1 bg-[#3498db]/25">
+        <AblutionDetails
+          title="ވުޟޫކުރުން"
+          imageMap={ablutionImageMap}
+          footerTexts={ablutionFooterTexts}
+        />
+
+        <Pressable
+          onPress={() => setModalVisible(true)}
+          className="bg-[#3498db] p-4 m-10 rounded-3xl active:bg-[#3498db]/80"
+        >
+          <Text className="text-white font-dhivehi text-center">
+            ޗެކްލިސްޓް
+          </Text>
+        </Pressable>
+        <ModalChecklist
+          isVisible={modalVisible}
+          onClose={() => setModalVisible(false)}
+          items={ablutionChecklistItems}
+          title="ވުޟޫކުރުން ޗެކްލިސްޓް"
+          onSubmit={handleSubmit}
+          initialCheckedItems={progress["ވުޟޫކުރުން"]?.checkedItems || {}}
+        />
+      </View>
     </SafeAreaView>
   );
 };

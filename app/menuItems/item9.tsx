@@ -111,7 +111,7 @@ const Item9: React.FC = () => {
   }, [navigation, unloadAllAudios]);
 
   return (
-    <SafeAreaView className="flex-1">
+    <SafeAreaView className="flex-1 bg-[#3498db]/25">
       <QuranReader
         onPlayPauseSound={playPause} // Handle play/pause for the current surah
         onIndexChange={playAudioForIndex} // Play the corresponding surah
@@ -122,7 +122,7 @@ const Item9: React.FC = () => {
 
       <Pressable
         onPress={() => setModalVisible(true)}
-        className="bg-blue-500 p-4 m-10 rounded active:bg-blue-500/80"
+        className="bg-[#3498db] p-4 m-10 rounded-3xl active:bg-[#3498db]/80"
       >
         <Text className="text-white font-dhivehi text-center">ޗެކްލިސްޓް</Text>
       </Pressable>

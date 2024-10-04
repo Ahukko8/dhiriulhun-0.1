@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import React, { useState } from "react";
 import { View, Text, Pressable, ScrollView, SafeAreaView } from "react-native";
 import quran from "quran-json";
@@ -53,7 +54,7 @@ const QuranReader: React.FC<Header> = ({
         return surahContent.verses
           .map(
             (verse: { id: number; text: string }) =>
-              `${verse.id}. ${verse.text}`,
+              `${verse.id}. ${verse.text}`
           )
           .join("\n\n");
       } catch (error) {
@@ -74,14 +75,14 @@ const QuranReader: React.FC<Header> = ({
 
   return (
     <SafeAreaView className="flex-1">
-      <View className="flex-row items-center justify-center pt-5 px-4 h-20">
+      <View className="bg-[#3498db] flex-row items-center justify-center pt-5 px-4 h-20">
         <Pressable
           onPress={() => router.back()}
-          className="absolute left-4 z-10"
+          className=" absolute left-4 z-10"
         >
-          <AntDesign name="arrowleft" size={30} color="black" />
+          <AntDesign name="leftcircle" size={20} color="white" />
         </Pressable>
-        <Text className="text-2xl pt-5 text-center font-dhivehi">
+        <Text className="text-lg text-center text-white font-dhivehi">
           ޤުރްއާން ކިޔެވުން
         </Text>
         {isAudioLoaded && (
@@ -92,7 +93,7 @@ const QuranReader: React.FC<Header> = ({
             <AntDesign
               name={isPlaying ? "pausecircle" : "playcircleo"}
               size={30}
-              color="black"
+              color="white"
             />
           </Pressable>
         )}
@@ -103,15 +104,15 @@ const QuranReader: React.FC<Header> = ({
             <Pressable
               key={surah}
               onPress={() => handleSurahSelection(surah as Surah, index)}
-              className={`bg-[#3498DB] p-4 rounded shadow ${
-                selectedSurah === surah ? "bg-[#2980B9]" : ""
+              className={`bg-[#3498db] p-4 rounded shadow ${
+                selectedSurah === surah ? "bg-[#3498db]/75" : ""
               }`}
             >
               <Text className="text-white font-dhivehi text-center">
                 {surah}
               </Text>
             </Pressable>
-          ),
+          )
         )}
       </View>
 

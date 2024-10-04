@@ -28,28 +28,30 @@ export const MenuDetails: React.FC<CustomLayoutProps> = ({
 }) => {
   return (
     <SafeAreaView className="flex-1">
-      <View className="flex-row items-center justify-center pt-5 px-4 h-20">
+      <View className="bg-[#3498db] flex-row items-center justify-center pt-5 px-4 h-20">
         <Pressable
           onPress={() => router.back()}
           className="absolute left-4 z-10"
         >
-          <AntDesign name="arrowleft" size={30} color="black" />
+          <AntDesign name="leftcircle" size={20} color="white" />
         </Pressable>
-        <Text className="text-2xl pt-5 text-center font-dhivehi">{title}</Text>
-        {isAudioLoaded && (
+        <Text className="text-lg text-white text-center font-dhivehi">
+          {title}
+        </Text>
+        {/* {isAudioLoaded && (
           <Pressable
             onPress={onPlayPauseSound}
             className="absolute right-4 z-10"
           >
             <AntDesign
               name={isPlaying ? "pausecircle" : "playcircleo"}
-              size={30}
-              color="black"
+              size={20}
+              color="white"
             />
           </Pressable>
-        )}
+        )} */}
       </View>
-      <View className="flex-1">
+      <View className="flex-1 mt-5">
         <Swiper
           showsPagination={false}
           onIndexChanged={onIndexChange}

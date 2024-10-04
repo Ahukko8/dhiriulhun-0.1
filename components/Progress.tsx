@@ -44,7 +44,7 @@ const ProgressItem: React.FC<ProgressItemProps> = ({
 const TotalProgressBar: React.FC<{ progress: number }> = ({ progress }) => (
   <View className="bg-gray-200 h-4 rounded-full overflow-hidden">
     <View
-      className="bg-blue-500 h-full"
+      className="bg-slate-500 h-full"
       style={{ width: `${progress * 100}%` }}
     />
   </View>
@@ -140,17 +140,17 @@ const Progress: React.FC = () => {
         <View className="flex-row justify-around m-4">
           <Pressable
             onPress={resetProgress}
-            className="bg-blue-500 active:bg-blue-400 p-4 rounded flex-row items-center"
+            className="bg-[#3498db] active:bg-[#3498db]/75 p-4 rounded-3xl flex-row items-center"
           >
             <Ionicons name="refresh" size={24} color="white" />
             <Text className="text-white font-dhivehi ml-2">ރީސެޓްކުރޭ</Text>
           </Pressable>
           <Pressable
             onPress={captureAndShareProgress}
-            className="bg-green-500 active:bg-green-400 p-4 rounded flex-row items-center"
+            className="bg-white border border-[#3498db] active:bg-slate-100 p-4 rounded-3xl flex-row items-center"
           >
-            <Ionicons name="share-outline" size={24} color="white" />
-            <Text className="text-white font-dhivehi ml-2">ޙިއްސާކުރޭ</Text>
+            <Ionicons name="share-outline" size={24} color="#3498db" />
+            <Text className="text-[#3498db] font-dhivehi ml-2">ޙިއްސާކުރޭ</Text>
           </Pressable>
         </View>
         <ViewShot
