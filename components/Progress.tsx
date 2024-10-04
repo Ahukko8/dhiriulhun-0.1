@@ -44,7 +44,7 @@ const ProgressItem: React.FC<ProgressItemProps> = ({
 const TotalProgressBar: React.FC<{ progress: number }> = ({ progress }) => (
   <View className="bg-gray-200 h-4 rounded-full overflow-hidden">
     <View
-      className="bg-slate-500 h-full"
+      className="bg-[#0b5c92] h-full"
       style={{ width: `${progress * 100}%` }}
     />
   </View>

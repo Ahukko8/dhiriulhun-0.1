@@ -108,10 +108,10 @@ export default function ReminderComponent() {
   };
 
   return (
-    <View className="flex-1 bg-white p-5">
-      <View className="bg-white rounded-3xl">
-        <View className="p-5 rounded-2xl shadow-md overflow-hidden">
-          <View className="bg-white rounded-3xl p-4">
+    <View className="flex-1 bg-gray-100 p-5">
+      <View className="bg-white rounded-3xl mb-5">
+        <View className="p-5 rounded-2xl  overflow-hidden">
+          <View className="">
             <Text className="text-2xl mb-5 font-dhivehiContent text-zinc-800 ">
               އެލާޓްސް
             </Text>
@@ -159,11 +159,14 @@ export default function ReminderComponent() {
           </View>
         </View>
       </View>
-      <FlatList
+    <View className="flex-1">
+      <Text className="text-gray-400 font-dhivehiContent">އެލާޓްސް ތަފްސީލް</Text>
+    <FlatList
         data={reminders}
         keyExtractor={(item) => item.id}
         renderItem={({ item }) => (
-          <View className="border border-slate-200 bg-white p-3 rounded-md mb-2 flex-row justify-between items-center shadow-md">
+          <View className="border border-slate-200 bg-white p-5 rounded-xl mt-1 flex-row justify-between items-center shadow-md">
+            
             <View>
               <Text className="font-dhivehiContent text-lg">{item.title}</Text>
               <Text className="text-gray-600">
@@ -196,6 +199,7 @@ export default function ReminderComponent() {
           </View>
         )}
       />
+    </View>
     </View>
   );
 }

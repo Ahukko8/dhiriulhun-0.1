@@ -162,7 +162,7 @@ const ModalChecklist: React.FC<ModalChecklistProps> = ({
           <View className="flex-row justify-between mt-4">
             <Pressable
               onPress={onClose}
-              className="bg-gray-300 p-2 rounded flex-1 mr-2 active:bg-gray-300/80"
+              className="bg-gray-300 p-2 rounded-3xl flex-1 mr-2 active:bg-gray-300/80"
             >
               <Text className="text-gray-800 text-center font-semibold">
                 ފަހަތަށް
@@ -170,7 +170,7 @@ const ModalChecklist: React.FC<ModalChecklistProps> = ({
             </Pressable>
             <Pressable
               onPress={handleSubmit}
-              className="bg-blue-500 p-2 rounded flex-1 ml-2 active:bg-blue-500/80"
+              className="bg-blue-500 p-2 rounded-3xl flex-1 ml-2 active:bg-blue-500/80"
             >
               <Text className="text-white text-center font-semibold">
                 ހުށަހަޅާ

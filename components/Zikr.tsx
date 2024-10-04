@@ -18,16 +18,18 @@ export const Zikr: React.FC<CustomLayoutProps> = ({
 }) => {
   return (
     <SafeAreaView className="flex-1">
-      <View className="flex-row items-center justify-center pt-5 px-4 h-20">
+      <View className="bg-[#3498db] flex-row items-center justify-center pt-5 px-4 h-20">
         <Pressable
           onPress={() => router.back()}
           className="absolute left-4 z-10"
         >
-          <AntDesign name="arrowleft" size={30} color="black" />
+          <AntDesign name="leftcircle" size={20} color="white" />
         </Pressable>
-        <Text className="text-2xl pt-5 text-center font-dhivehi">{title}</Text>
+        <Text className="text-lg text-white text-center font-dhivehi">
+          {title}
+        </Text>
       </View>
-      <Swiper showsPagination={true}>
+      <Swiper showsPagination={false} loop={false}>
         {zikrMap.map((source, index) => (
           <View key={index} className="">
             <Text className="mt-20 text-center mx-5 text-2xl font-arabNext">

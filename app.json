@@ -16,7 +16,8 @@
       "supportsTablet": true,
       "infoPlist": {
         "NSUserNotificationUsageDescription": "This app uses notifications to send you important alerts."
-      }
+      },
+      "bundleIdentifier": "com.ahusan88.dhiriulhun01"
     },
     "android": {
       "adaptiveIcon": {
@@ -24,8 +25,11 @@
         "backgroundColor": "#ffffff"
       },
       "permissions": [
-        "NOTIFICATIONS"
-      ]
+        "NOTIFICATIONS",
+        "android.permission.RECORD_AUDIO",
+        "android.permission.MODIFY_AUDIO_SETTINGS"
+      ],
+      "package": "com.ahusan88.dhiriulhun01"
     },
     "web": {
       "bundler": "metro",
@@ -45,6 +49,14 @@
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "998aa7cd-15a5-42d1-82b8-04b796fe86a4"
+      }
     }
   }
 }
