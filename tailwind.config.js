@@ -14,6 +14,7 @@ module.exports = {
       dhivehiTitle: [" DhivehiTitle", "sans-serif"],
       dhivehiContent: ["dhivehiContent", "sans-serif"],
       arabNext: ["arabNext"],
+      arabQuran: ["arabQuran"],
     },
   },
   plugins: [],

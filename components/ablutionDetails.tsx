@@ -29,7 +29,7 @@ export const AblutionDetails: React.FC<CustomLayoutProps> = ({
         </Text>
       </View>
       <View className="flex-1">
-        <Swiper showsPagination={true} loop={false}>
+        <Swiper showsPagination={false} loop={false}>
           {Object.entries(imageMap).map(([key, source], index) => (
             <View key={index} className="justify-center items-center px-2">
               <Image

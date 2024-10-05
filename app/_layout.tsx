@@ -10,6 +10,7 @@ export default function RootLayout() {
     DhivehiTitle: require("@/assets/fonts/Mv_MAG_Round_HBold.otf"),
     dhivehiContent: require("@/assets/fonts/dhivehiContent.ttf"),
     arabNext: require("@/assets/fonts/arabNext.ttf"),
+    arabQuran: require("@/assets/fonts/arabQuran.otf"),
   });
 
   useEffect(() => {

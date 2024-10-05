@@ -51,7 +51,7 @@ export const MenuDetails: React.FC<CustomLayoutProps> = ({
           </Pressable>
         )} */}
       </View>
-      <View className="flex-1 mt-5">
+      <View className="flex-1">
         <Swiper
           showsPagination={false}
           onIndexChanged={onIndexChange}
@@ -62,10 +62,10 @@ export const MenuDetails: React.FC<CustomLayoutProps> = ({
             <View key={index} className="justify-center items-center px-2">
               <Image
                 source={source}
-                className="w-full h-[30vh] rounded-lg"
+                className="w-full mt-2 h-[30vh] rounded-lg"
                 resizeMode="cover"
               />
-              <Text className="mt-6 text-right font-dhivehiContent text-base">
+              <Text className="mt-2 text-right font-dhivehiContent  text-base">
                 {footerTexts[index] || ""}
               </Text>
             </View>

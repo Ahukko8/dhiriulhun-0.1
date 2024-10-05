@@ -137,7 +137,7 @@ const Progress: React.FC = () => {
           </Text>
           <TotalProgressBar progress={totalProgress} />
         </View> */}
-        <View className="flex-row justify-around m-4">
+        <View className="flex-row justify-around m-4 ">
           <Pressable
             onPress={resetProgress}
             className="bg-[#3498db] active:bg-[#3498db]/75 p-4 rounded-3xl flex-row items-center"
