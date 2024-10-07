@@ -58,9 +58,9 @@ const Menu = () => {
                     case 12:
                       router.push("/menuItems/item12");
                       break;
-                    case 13:
-                      router.push("/menuItems/item13");
-                      break;
+                    // case 13:
+                    //   router.push("/menuItems/item13");
+                    //   break;
                     // Add more cases as needed
                     // default:
                     //   router.push(`/menuItems/${item.id}`);

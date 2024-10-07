@@ -170,7 +170,7 @@ interface QuranReaderProps {
   isPlaying: boolean;
   isAudioLoaded: boolean;
   currentIndex: number;
-  quranChecklistItems: Array<{ id: string; text: string }>;
+  quranChecklistItems: { id: string; text: string }[];
   progress: Record<string, ProgressItem>;
   updateProgress: (
     itemId: string,

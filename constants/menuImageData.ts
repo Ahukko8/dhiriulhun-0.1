@@ -58,15 +58,10 @@ export const MENU_IMAGE_DATA: MenuType[] = [
   {
     id: 11,
     title: "ދަމު ނަމާދު",
-    image: "tahajjud.webp",
-  },
-  {
-    id: 12,
-    title: "ވިތުރި ނަމާދު",
     image: "witr.webp",
   },
   {
-    id: 13,
+    id: 12,
     title: "ހުކުރު ނަމާދު",
     image: "jumuah.webp",
   },

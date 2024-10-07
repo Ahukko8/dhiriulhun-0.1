@@ -8,8 +8,7 @@ import eveningDhikr from "@/assets/menuImages/eveningDhikr.webp";
 import maghribPrayer from "@/assets/menuImages/Maghrib.webp";
 import quran from "@/assets/menuImages/Quran.webp";
 import ishaPrayer from "@/assets/menuImages/Isha.webp";
-import tahajjud from "@/assets/menuImages/Tahajjud.webp";
-import witr from "@/assets/menuImages/witr.webp";
+import tahajjud from "@/assets/menuImages/witr.webp";
 import jumuah from "@/assets/menuImages/Jumuah.webp";
 
 export default [
@@ -24,6 +23,5 @@ export default [
   quran,
   ishaPrayer,
   tahajjud,
-  witr,
   jumuah,
 ];

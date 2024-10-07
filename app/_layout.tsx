@@ -51,7 +51,6 @@ export default function RootLayout() {
       <Stack.Screen name="menuItems/item10" options={{ headerShown: false }} />
       <Stack.Screen name="menuItems/item11" options={{ headerShown: false }} />
       <Stack.Screen name="menuItems/item12" options={{ headerShown: false }} />
-      <Stack.Screen name="menuItems/item13" options={{ headerShown: false }} />
     </Stack>
   );
 }
